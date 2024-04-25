@@ -1,0 +1,23 @@
+name: 'Pull request reviews reminder action'
+description: 'Automatically send notification for pull requests waiting for reviewers'
+branding:
+  icon: 'bell'
+  color: 'red'
+inputs:
+  webhook-url:
+    description: 'Webhook URL'
+    required: false
+  channel:
+    description: 'Channel name'
+    required: false
+  git-slack-username:
+    description: 'Map GitHub username to Slack user IDs.'
+    required: false
+    default: ''
+  ignore-label:
+    description: 'Ignore Pull Requests with that label'
+    required: false
+    default: ''
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
